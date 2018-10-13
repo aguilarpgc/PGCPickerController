@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1BF-gF-vC0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1BF-gF-vC0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,12 +12,16 @@
         <scene sceneID="NYg-WW-mfO">
             <objects>
                 <viewController id="1BF-gF-vC0" customClass="PGCPickerViewController" customModule="TestPickerController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SiW-Yx-cyz"/>
+                        <viewControllerLayoutGuide type="bottom" id="75T-hz-7Am"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="elW-VT-4ty">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gou-rg-HK5">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="QpL-xV-cme" appends="YES" id="IFu-Gk-Uhd"/>
@@ -71,15 +74,14 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="mQF-KQ-cTB" firstAttribute="trailing" secondItem="Gou-rg-HK5" secondAttribute="trailing" id="D6y-Fp-1XX"/>
-                            <constraint firstItem="mQF-KQ-cTB" firstAttribute="trailing" secondItem="NmY-V9-7NL" secondAttribute="trailing" id="Hc6-2q-6ya"/>
-                            <constraint firstItem="NmY-V9-7NL" firstAttribute="leading" secondItem="mQF-KQ-cTB" secondAttribute="leading" id="IWw-UQ-M6a"/>
-                            <constraint firstItem="Gou-rg-HK5" firstAttribute="leading" secondItem="mQF-KQ-cTB" secondAttribute="leading" id="Wp1-6v-aL5"/>
-                            <constraint firstItem="Gou-rg-HK5" firstAttribute="top" secondItem="mQF-KQ-cTB" secondAttribute="top" id="bpq-8m-JdF"/>
+                            <constraint firstAttribute="trailing" secondItem="Gou-rg-HK5" secondAttribute="trailing" id="D6y-Fp-1XX"/>
+                            <constraint firstAttribute="trailing" secondItem="NmY-V9-7NL" secondAttribute="trailing" id="Hc6-2q-6ya"/>
+                            <constraint firstItem="NmY-V9-7NL" firstAttribute="leading" secondItem="elW-VT-4ty" secondAttribute="leading" id="IWw-UQ-M6a"/>
+                            <constraint firstItem="Gou-rg-HK5" firstAttribute="leading" secondItem="elW-VT-4ty" secondAttribute="leading" id="Wp1-6v-aL5"/>
+                            <constraint firstItem="Gou-rg-HK5" firstAttribute="top" secondItem="elW-VT-4ty" secondAttribute="top" id="bpq-8m-JdF"/>
                             <constraint firstItem="NmY-V9-7NL" firstAttribute="top" secondItem="elW-VT-4ty" secondAttribute="bottom" id="h84-RZ-aNH"/>
-                            <constraint firstItem="mQF-KQ-cTB" firstAttribute="bottom" secondItem="Gou-rg-HK5" secondAttribute="bottom" id="nD8-Ao-Q5i"/>
+                            <constraint firstAttribute="bottom" secondItem="Gou-rg-HK5" secondAttribute="bottom" id="nD8-Ao-Q5i"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="mQF-KQ-cTB"/>
                     </view>
                     <connections>
                         <outlet property="constraintPickerTop" destination="h84-RZ-aNH" id="HF8-Zm-DLH"/>
