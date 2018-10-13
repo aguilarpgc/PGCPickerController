@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC461930217267BD004CFBB9 /* PGCPickerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC46192E217267BD004CFBB9 /* PGCPickerViewController.storyboard */; };
+		DC461931217267BD004CFBB9 /* PGCPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC46192F217267BD004CFBB9 /* PGCPickerViewController.swift */; };
 		DCB8A94D21714EDC00D07E35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB8A94C21714EDC00D07E35 /* AppDelegate.swift */; };
 		DCB8A94F21714EDC00D07E35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB8A94E21714EDC00D07E35 /* ViewController.swift */; };
 		DCB8A95221714EDC00D07E35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCB8A95021714EDC00D07E35 /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC46192E217267BD004CFBB9 /* PGCPickerViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PGCPickerViewController.storyboard; sourceTree = "<group>"; };
+		DC46192F217267BD004CFBB9 /* PGCPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PGCPickerViewController.swift; sourceTree = "<group>"; };
 		DCB8A94921714EDC00D07E35 /* TestPickerController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestPickerController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCB8A94C21714EDC00D07E35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCB8A94E21714EDC00D07E35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +39,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC46192D217267BD004CFBB9 /* PGCPickerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DC46192E217267BD004CFBB9 /* PGCPickerViewController.storyboard */,
+				DC46192F217267BD004CFBB9 /* PGCPickerViewController.swift */,
+			);
+			name = PGCPickerViewController;
+			path = ../../Sources/PGCPickerViewController;
+			sourceTree = "<group>";
+		};
 		DCB8A94021714EDC00D07E35 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +68,7 @@
 		DCB8A94B21714EDC00D07E35 /* TestPickerController */ = {
 			isa = PBXGroup;
 			children = (
+				DC46192D217267BD004CFBB9 /* PGCPickerViewController */,
 				DCB8A94C21714EDC00D07E35 /* AppDelegate.swift */,
 				DCB8A94E21714EDC00D07E35 /* ViewController.swift */,
 				DCB8A95021714EDC00D07E35 /* Main.storyboard */,
@@ -123,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCB8A95721714EDD00D07E35 /* LaunchScreen.storyboard in Resources */,
+				DC461930217267BD004CFBB9 /* PGCPickerViewController.storyboard in Resources */,
 				DCB8A95421714EDD00D07E35 /* Assets.xcassets in Resources */,
 				DCB8A95221714EDC00D07E35 /* Main.storyboard in Resources */,
 			);
@@ -135,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC461931217267BD004CFBB9 /* PGCPickerViewController.swift in Sources */,
 				DCB8A94F21714EDC00D07E35 /* ViewController.swift in Sources */,
 				DCB8A94D21714EDC00D07E35 /* AppDelegate.swift in Sources */,
 			);

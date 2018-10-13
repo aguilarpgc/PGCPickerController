@@ -9,12 +9,8 @@ import UIKit
 
 public protocol PickerOptions {
     
-    // MARK: - Properties -
-    
-    var previousSelections: [Int]? { set get }
+    var currentIndexSelected: [Int]? { set get }
     var numberOfComponents: Int { get }
-    
-    // MARK: - Methods -
     
     func numberOfRows(atComponent: Int) -> Int
     func title(forRow row: Int, atComponent component: Int) -> String
@@ -117,11 +113,11 @@ class PGCPickerViewController: UIViewController {
     
     private func setupPickerValues() {
         
-        guard let previous = pickerOptions?.previousSelections else {
+        guard let current = pickerOptions?.currentIndexSelected else {
             return
         }
         
-        for (index, option) in previous.enumerated() {
+        for (index, option) in current.enumerated() {
             
             pickerView.selectRow(option, inComponent: index, animated: false)
         }
@@ -129,11 +125,11 @@ class PGCPickerViewController: UIViewController {
     
     private func setDefaultValues() {
         
-        guard let previous = pickerOptions?.previousSelections else {
+        guard let current = pickerOptions?.currentIndexSelected else {
             return
         }
         
-        self.setNewValues(selections: previous)
+        self.setNewValues(selections: current)
     }
     
     private func setNewValues(selections: [Int]) {
