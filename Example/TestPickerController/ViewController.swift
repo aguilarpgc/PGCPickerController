@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var labelSelection: UILabel!
     
     // MARK: - Properties -
+    
     private var source = ItemsSource(currentIndexSelected: nil)
     
     // MARK: - Life cycle -

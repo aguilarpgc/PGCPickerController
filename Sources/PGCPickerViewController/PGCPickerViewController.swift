@@ -17,6 +17,20 @@ public protocol PickerOptions {
     
 }
 
+internal extension UIStoryboard {
+    
+    static var instantiatePickerController: PGCPickerViewController {
+        
+        guard let pickerController = UIStoryboard(name: "PGCPickerViewController", bundle: nil).instantiateInitialViewController() as? PGCPickerViewController else {
+            
+            fatalError()
+        }
+        
+        return pickerController
+    }
+    
+}
+
 class PGCPickerViewController: UIViewController {
 
     // MARK: - IBOutlets -
@@ -72,7 +86,8 @@ class PGCPickerViewController: UIViewController {
     
     public static func presentFrom(pickerOptions: PickerOptions, selectionHandler: @escaping ([Int]) -> Void) -> PGCPickerViewController {
         
-        let controller = UIStoryboard(name: "PGCPickerViewController", bundle: nil).instantiateInitialViewController() as! PGCPickerViewController
+        let controller = UIStoryboard.instantiatePickerController
+        
         controller.modalPresentationStyle = .overCurrentContext
         controller.pickerOptions = pickerOptions
         controller.selectionHandler = selectionHandler
