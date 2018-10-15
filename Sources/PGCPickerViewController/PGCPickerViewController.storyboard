@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gou-rg-HK5">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gou-rg-HK5">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -84,7 +84,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="constraintPickerTop" destination="h84-RZ-aNH" id="HF8-Zm-DLH"/>
+                        <outlet property="constraintPickerContainerTop" destination="h84-RZ-aNH" id="wqD-UK-3bN"/>
                         <outlet property="pickerView" destination="7Em-an-wvq" id="ySw-ma-Lhb"/>
                         <outlet property="viewFadeBackground" destination="Gou-rg-HK5" id="XOZ-OB-g82"/>
                         <outlet property="viewPickerContainer" destination="NmY-V9-7NL" id="DZ4-DK-dQm"/>

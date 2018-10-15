@@ -35,7 +35,7 @@ class PGCPickerViewController: UIViewController {
 
     // MARK: - IBOutlets -
     
-    @IBOutlet private weak var constraintPickerTop: NSLayoutConstraint!
+    @IBOutlet private weak var constraintPickerContainerTop: NSLayoutConstraint!
     @IBOutlet private weak var viewFadeBackground: UIView!
     @IBOutlet private weak var viewPickerContainer: UIView!
     @IBOutlet private weak var pickerView: UIPickerView!
@@ -45,7 +45,7 @@ class PGCPickerViewController: UIViewController {
     public var pickerOptions: PickerOptions?
     public var selectionHandler: ((_ selections: [Int]) -> Void)? = nil
     
-    private let animationDuration = 0.4
+    private let animationDuration = 0.35
 
     // MARK: - Life cycle -
     
@@ -64,12 +64,6 @@ class PGCPickerViewController: UIViewController {
 
     // MARK: - Actions -
     
-    @IBAction func actionTapFadeBackground(_ sender: Any) {
-        
-        setNewValues(selections: pickerValuesSelected())
-        hidePickerController()
-    }
-    
     @IBAction func actionCancel(_ sender: Any) {
         
         setDefaultValues()
@@ -77,6 +71,12 @@ class PGCPickerViewController: UIViewController {
     }
     
     @IBAction func actionDone(_ sender: Any) {
+        
+        setNewValues(selections: pickerValuesSelected())
+        hidePickerController()
+    }
+    
+    @IBAction func actionTapFadeBackground(_ sender: Any) {
         
         setNewValues(selections: pickerValuesSelected())
         hidePickerController()
@@ -95,28 +95,16 @@ class PGCPickerViewController: UIViewController {
         return controller
     }
     
-    private func showPickerContainer() {
-        
-        self.view.layoutIfNeeded()
-        
-        UIView.animate(withDuration: animationDuration, animations: {
-            
-            self.viewFadeBackground.alpha = 1.0
-            self.constraintPickerTop.constant = -self.viewPickerContainer.bounds.size.height
-            
-            self.view.layoutIfNeeded()
-            
-        })
-    }
+    // MARK: - Private -
     
     private func hidePickerController() {
         
         self.view.layoutIfNeeded()
         
-        UIView.animate(withDuration: 0.5, animations: { [unowned self] in
+        UIView.animate(withDuration: animationDuration, animations: { [unowned self] in
             
             self.viewFadeBackground.alpha = 0.0
-            self.constraintPickerTop.constant = 0.0
+            self.constraintPickerContainerTop.constant = 0.0
             
             self.view.layoutIfNeeded()
             
@@ -126,16 +114,16 @@ class PGCPickerViewController: UIViewController {
         }
     }
     
-    private func setupPickerValues() {
+    private func pickerValuesSelected() -> [Int] {
         
-        guard let current = pickerOptions?.currentIndexSelected else {
-            return
-        }
+        var selections: [Int] = []
         
-        for (index, option) in current.enumerated() {
+        for index in 0..<pickerView.numberOfComponents {
             
-            pickerView.selectRow(option, inComponent: index, animated: false)
+            selections.append(pickerView.selectedRow(inComponent: index))
         }
+        
+        return selections
     }
     
     private func setDefaultValues() {
@@ -152,18 +140,31 @@ class PGCPickerViewController: UIViewController {
         self.selectionHandler?(selections)
     }
     
-    private func pickerValuesSelected() -> [Int] {
+    private func setupPickerValues() {
         
-        var selections: [Int] = []
-        
-        for index in 0..<pickerView.numberOfComponents {
-            
-            selections.append(pickerView.selectedRow(inComponent: index))
+        guard let current = pickerOptions?.currentIndexSelected else {
+            return
         }
         
-        return selections
+        for (index, option) in current.enumerated() {
+            
+            pickerView.selectRow(option, inComponent: index, animated: false)
+        }
     }
-
+    
+    private func showPickerContainer() {
+        
+        self.view.layoutIfNeeded()
+        
+        UIView.animate(withDuration: animationDuration, animations: {
+            
+            self.viewFadeBackground.alpha = 1.0
+            self.constraintPickerContainerTop.constant = -self.viewPickerContainer.bounds.size.height
+            
+            self.view.layoutIfNeeded()
+            
+        })
+    }
 }
 
 // MARK: - Protocols -
