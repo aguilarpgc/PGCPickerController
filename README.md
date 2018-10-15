@@ -9,3 +9,9 @@
 ### Manual
 
 Add PGCPickerViewController folder into your project.
+
+### Example Usage
+
+*TODO*
+
+![Example](https://github.com/aguilarpgc/PGCPickerController/blob/master/Images/example.gif)
