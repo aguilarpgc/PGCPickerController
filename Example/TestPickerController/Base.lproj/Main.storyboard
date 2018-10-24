@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4op-OQ-sb5">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -9,44 +9,150 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="xSM-BR-j6M">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="4op-OQ-sb5" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oGE-uR-Hj5">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="srw-25-ZGT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="skf-af-j6G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-819" y="15"/>
+        </scene>
+        <!--First View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestPickerController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="FirstViewController" customModule="TestPickerController" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sL-PJ-bLk">
-                                <rect key="frame" x="174" y="156.5" width="27" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sL-PJ-bLk">
+                                <rect key="frame" x="109" y="52" width="102.5" height="21"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Single choice">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <integer key="NSUnderline" value="1"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLs-Ol-JBS">
-                                <rect key="frame" x="153.5" y="315.5" width="68" height="36"/>
+                                <rect key="frame" x="126" y="232" width="68" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Choose"/>
                                 <connections>
                                     <action selector="actionChoose:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gpX-SV-hTM"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOt-S0-lvB">
+                                <rect key="frame" x="146.5" y="93" width="27" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ck2-Sb-RRK">
+                                <rect key="frame" x="108" y="430" width="104" height="30"/>
+                                <state key="normal" title="Multiple choice"/>
+                                <connections>
+                                    <segue destination="bMb-af-xDK" kind="show" id="Q7S-0g-JtT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Ck2-Sb-RRK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3dF-7F-sQY"/>
+                            <constraint firstItem="5sL-PJ-bLk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1:4" constant="2.5" id="53b-7k-ZCj"/>
                             <constraint firstItem="5sL-PJ-bLk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6yn-f6-wHE"/>
-                            <constraint firstItem="5sL-PJ-bLk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1:2" id="CdJ-vt-kyt"/>
-                            <constraint firstItem="hLs-Ol-JBS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Zb9-EF-CO2"/>
-                            <constraint firstItem="hLs-Ol-JBS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kJT-7f-JhM"/>
+                            <constraint firstItem="HOt-S0-lvB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="8CM-4c-5Nc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ck2-Sb-RRK" secondAttribute="bottom" constant="20" id="EuS-Sf-yz5"/>
+                            <constraint firstItem="HOt-S0-lvB" firstAttribute="top" secondItem="5sL-PJ-bLk" secondAttribute="bottom" constant="20" id="Op0-c7-noq"/>
+                            <constraint firstItem="hLs-Ol-JBS" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Zb9-EF-CO2"/>
+                            <constraint firstItem="hLs-Ol-JBS" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kJT-7f-JhM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="SX8-aK-P0X"/>
                     <connections>
-                        <outlet property="labelSelection" destination="5sL-PJ-bLk" id="MMy-FM-F9Y"/>
+                        <outlet property="labelSelection" destination="HOt-S0-lvB" id="cL7-B9-pbd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137" y="15"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="Oh7-LE-hyi">
+            <objects>
+                <viewController id="bMb-af-xDK" customClass="SecondViewController" customModule="TestPickerController" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YQP-xS-YtN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hbc-Q7-Avq">
+                                <rect key="frame" x="102" y="52" width="116" height="21"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Multiple choice">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <integer key="NSUnderline" value="1"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRx-8q-Xc8">
+                                <rect key="frame" x="126" y="232" width="68" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Choose"/>
+                                <connections>
+                                    <action selector="actionChoose:" destination="bMb-af-xDK" eventType="touchUpInside" id="KrM-Xf-n4K"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPY-cQ-WIk">
+                                <rect key="frame" x="10" y="88" width="130" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quarter" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZv-Yl-iYX">
+                                <rect key="frame" x="180" y="88" width="130" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gRx-8q-Xc8" firstAttribute="centerX" secondItem="Fye-EG-qvm" secondAttribute="centerX" id="2Sc-Fx-WDX"/>
+                            <constraint firstItem="Fye-EG-qvm" firstAttribute="centerX" secondItem="oPY-cQ-WIk" secondAttribute="trailing" constant="20" id="GDh-O3-37V"/>
+                            <constraint firstItem="Hbc-Q7-Avq" firstAttribute="centerX" secondItem="YQP-xS-YtN" secondAttribute="centerX" id="H7g-Ja-MLX"/>
+                            <constraint firstItem="oPY-cQ-WIk" firstAttribute="leading" secondItem="Fye-EG-qvm" secondAttribute="leading" constant="10" id="IH5-9D-EAA"/>
+                            <constraint firstItem="wZv-Yl-iYX" firstAttribute="centerY" secondItem="oPY-cQ-WIk" secondAttribute="centerY" id="OVf-pi-Hav"/>
+                            <constraint firstItem="gRx-8q-Xc8" firstAttribute="centerY" secondItem="Fye-EG-qvm" secondAttribute="centerY" id="dJP-9B-SW4"/>
+                            <constraint firstItem="Hbc-Q7-Avq" firstAttribute="centerY" secondItem="YQP-xS-YtN" secondAttribute="centerY" multiplier="1:4" constant="2.5" id="ddT-MY-6EY"/>
+                            <constraint firstItem="oPY-cQ-WIk" firstAttribute="top" secondItem="Hbc-Q7-Avq" secondAttribute="bottom" constant="15" id="kdk-ed-OW3"/>
+                            <constraint firstItem="Fye-EG-qvm" firstAttribute="trailing" secondItem="wZv-Yl-iYX" secondAttribute="trailing" constant="10" id="rsV-O9-Jly"/>
+                            <constraint firstItem="wZv-Yl-iYX" firstAttribute="leading" secondItem="Fye-EG-qvm" secondAttribute="centerX" constant="20" id="srf-z8-VLt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Fye-EG-qvm"/>
+                    </view>
+                    <connections>
+                        <outlet property="labelQuarterSelection" destination="wZv-Yl-iYX" id="i1o-iQ-cM8"/>
+                        <outlet property="labelYearSelection" destination="oPY-cQ-WIk" id="FAA-ff-VtT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KKx-F8-d7K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1027.5" y="15"/>
         </scene>
     </scenes>
 </document>

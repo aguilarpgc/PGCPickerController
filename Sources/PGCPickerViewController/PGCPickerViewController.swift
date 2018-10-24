@@ -9,30 +9,18 @@ import UIKit
 
 public protocol PickerOptions {
     
-    var currentIndexSelected: [Int]? { set get }
+    var currentIndexesSelected: [Int]? { set get }
     var numberOfComponents: Int { get }
     
-    func numberOfRows(atComponent: Int) -> Int
+    func numberOfRows(atComponent component: Int) -> Int
     func title(forRow row: Int, atComponent component: Int) -> String
     
 }
 
-internal extension UIStoryboard {
-    
-    static var instantiatePickerController: PGCPickerViewController {
-        
-        guard let pickerController = UIStoryboard(name: "PGCPickerViewController", bundle: nil).instantiateInitialViewController() as? PGCPickerViewController else {
-            
-            fatalError()
-        }
-        
-        return pickerController
-    }
-    
-}
+typealias SelectionHandler = (_ selections: [Int]) -> Void
 
 class PGCPickerViewController: UIViewController {
-
+    
     // MARK: - IBOutlets -
     
     @IBOutlet private weak var constraintPickerContainerTop: NSLayoutConstraint!
@@ -43,7 +31,7 @@ class PGCPickerViewController: UIViewController {
     // MARK: - Properties -
     
     public var pickerOptions: PickerOptions?
-    public var selectionHandler: ((_ selections: [Int]) -> Void)? = nil
+    public var selectionHandler: SelectionHandler? = nil
     
     private let animationDuration = 0.35
 
@@ -84,7 +72,7 @@ class PGCPickerViewController: UIViewController {
     
     // MARK: - Methods -
     
-    public static func presentFrom(pickerOptions: PickerOptions, selectionHandler: @escaping ([Int]) -> Void) -> PGCPickerViewController {
+    public static func presentFrom(pickerOptions: PickerOptions, selectionHandler: @escaping SelectionHandler) -> PGCPickerViewController {
         
         let controller = UIStoryboard.instantiatePickerController
         
@@ -128,7 +116,7 @@ class PGCPickerViewController: UIViewController {
     
     private func setDefaultValues() {
         
-        guard let current = pickerOptions?.currentIndexSelected else {
+        guard let current = pickerOptions?.currentIndexesSelected else {
             return
         }
         
@@ -142,7 +130,7 @@ class PGCPickerViewController: UIViewController {
     
     private func setupPickerValues() {
         
-        guard let current = pickerOptions?.currentIndexSelected else {
+        guard let current = pickerOptions?.currentIndexesSelected else {
             return
         }
         
@@ -191,5 +179,20 @@ extension PGCPickerViewController: UIPickerViewDataSource, UIPickerViewDelegate 
         label.textColor = .black
         
         return label
+    }
+}
+
+
+
+internal extension UIStoryboard {
+    
+    static var instantiatePickerController: PGCPickerViewController {
+        
+        guard let pickerController = UIStoryboard(name: "PGCPickerViewController", bundle: nil).instantiateInitialViewController() as? PGCPickerViewController else {
+            
+            fatalError()
+        }
+        
+        return pickerController
     }
 }

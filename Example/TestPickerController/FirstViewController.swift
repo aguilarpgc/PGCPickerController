@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  FirstViewController.swift
 //  TestPickerController
 //
 //  Created by Paul Aguilar on 10/12/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class FirstViewController: UIViewController {
     
     // MARK: - Outlets -
     
@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     // MARK: - Properties -
     
-    private var source = ItemsSource(currentIndexSelected: nil)
+    private var source = FirstPickerSource(currentIndexesSelected: nil)
     
     // MARK: - Life cycle -
     
@@ -42,14 +42,14 @@ class ViewController: UIViewController {
     
     private func select(atIndex index: Int) {
         
-        source.currentIndexSelected = [index]
+        source.currentIndexesSelected = [index]
         
         update()
     }
     
     private func update() {
         
-        guard let currentIndex = source.currentIndexSelected?.first else {
+        guard let currentIndex = source.currentIndexesSelected?.first else {
             return
         }
         
@@ -57,13 +57,13 @@ class ViewController: UIViewController {
     }
 }
 
-struct ItemsSource: PickerOptions {
+struct FirstPickerSource: PickerOptions {
     
     let items = ["Audi", "BMW", "Chevrolet", "Ford", "Honda", "Hyundai", "Jeep", "KIA", "Mazda", "Mitsubishi", "Nissan", "Peugeot", "Renault", "Subaru", "Suzuki", "Toyota", "Volkswagen", "Volvo"]
     
     // MARK: - Protocol PickerOptions
     
-    var currentIndexSelected: [Int]?
+    var currentIndexesSelected: [Int]?
     
     var numberOfComponents: Int {
         
