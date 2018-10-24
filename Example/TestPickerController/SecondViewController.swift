@@ -29,6 +29,11 @@ class SecondViewController: UIViewController {
     
     // MARK: - IBActions -
     
+    @IBAction func actionBack(_ sender: Any) {
+        
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func actionChoose(_ sender: Any) {
         
         let controller = PGCPickerViewController.presentFrom(pickerOptions: source) { [weak self] (selections) in
