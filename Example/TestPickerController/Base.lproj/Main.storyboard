@@ -130,7 +130,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B00-3F-JIf">
-                                <rect key="frame" x="10" y="35" width="34" height="30"/>
+                                <rect key="frame" x="0.0" y="35" width="50" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Vnf-qe-Rj2"/>
+                                </constraints>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <action selector="actionBack:" destination="bMb-af-xDK" eventType="touchUpInside" id="L3v-pl-k6y"/>
@@ -144,7 +147,7 @@
                             <constraint firstItem="Hbc-Q7-Avq" firstAttribute="centerX" secondItem="YQP-xS-YtN" secondAttribute="centerX" id="H7g-Ja-MLX"/>
                             <constraint firstItem="oPY-cQ-WIk" firstAttribute="leading" secondItem="Fye-EG-qvm" secondAttribute="leading" constant="10" id="IH5-9D-EAA"/>
                             <constraint firstItem="wZv-Yl-iYX" firstAttribute="centerY" secondItem="oPY-cQ-WIk" secondAttribute="centerY" id="OVf-pi-Hav"/>
-                            <constraint firstItem="B00-3F-JIf" firstAttribute="leading" secondItem="YQP-xS-YtN" secondAttribute="leading" constant="10" id="bKg-s6-fGV"/>
+                            <constraint firstItem="B00-3F-JIf" firstAttribute="leading" secondItem="YQP-xS-YtN" secondAttribute="leading" id="bKg-s6-fGV"/>
                             <constraint firstItem="gRx-8q-Xc8" firstAttribute="centerY" secondItem="Fye-EG-qvm" secondAttribute="centerY" id="dJP-9B-SW4"/>
                             <constraint firstItem="Hbc-Q7-Avq" firstAttribute="centerY" secondItem="YQP-xS-YtN" secondAttribute="centerY" multiplier="1:4" constant="2.5" id="ddT-MY-6EY"/>
                             <constraint firstItem="oPY-cQ-WIk" firstAttribute="top" secondItem="Hbc-Q7-Avq" secondAttribute="bottom" constant="15" id="kdk-ed-OW3"/>

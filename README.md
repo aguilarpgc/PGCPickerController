@@ -10,8 +10,16 @@
 
 Add PGCPickerViewController folder into your project.
 
-### Example Usage
+## Example Usage
 
 *TODO*
 
-![Example](https://github.com/aguilarpgc/PGCPickerController/blob/master/Images/example.gif)
+## Images
+
+### Single choice
+
+![Single](https://github.com/aguilarpgc/PGCPickerController/blob/master/Images/simple.gif)
+
+### Multiple choice
+
+![Multiple](https://github.com/aguilarpgc/PGCPickerController/blob/master/Images/multiple.gif)
