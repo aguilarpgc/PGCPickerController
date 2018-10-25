@@ -72,12 +72,12 @@ class PGCPickerViewController: UIViewController {
     
     // MARK: - Methods -
     
-    public static func presentFrom(pickerOptions: PickerOptions, selectionHandler: @escaping SelectionHandler) -> PGCPickerViewController {
+    public static func with(pickerOptions options: PickerOptions, selectionHandler: @escaping SelectionHandler) -> PGCPickerViewController {
         
         let controller = UIStoryboard.instantiatePickerController
         
         controller.modalPresentationStyle = .overCurrentContext
-        controller.pickerOptions = pickerOptions
+        controller.pickerOptions = options
         controller.selectionHandler = selectionHandler
         
         return controller

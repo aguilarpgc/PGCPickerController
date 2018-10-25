@@ -36,7 +36,7 @@ class SecondViewController: UIViewController {
     
     @IBAction func actionChoose(_ sender: Any) {
         
-        let controller = PGCPickerViewController.presentFrom(pickerOptions: source) { [weak self] (selections) in
+        let controller = PGCPickerViewController.with(pickerOptions: source) { [weak self] (selections) in
             
             self?.select(atIndexes: selections)
         }
