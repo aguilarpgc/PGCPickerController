@@ -74,7 +74,7 @@ class PGCPickerViewController: UIViewController {
     
     public static func with(pickerOptions options: PickerOptions, selectionHandler: @escaping SelectionHandler) -> PGCPickerViewController {
         
-        let controller = UIStoryboard.instantiatePickerController
+        let controller = UIStoryboard.instantiatePGCPickerController
         
         controller.modalPresentationStyle = .overCurrentContext
         controller.pickerOptions = options
@@ -186,7 +186,7 @@ extension PGCPickerViewController: UIPickerViewDataSource, UIPickerViewDelegate 
 
 internal extension UIStoryboard {
     
-    static var instantiatePickerController: PGCPickerViewController {
+    static var instantiatePGCPickerController: PGCPickerViewController {
         
         guard let pickerController = UIStoryboard(name: "PGCPickerViewController", bundle: nil).instantiateInitialViewController() as? PGCPickerViewController else {
             
