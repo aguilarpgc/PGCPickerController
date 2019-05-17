@@ -38,7 +38,7 @@ class SecondViewController: UIViewController {
         
         let controller = PGCPickerViewController.with(pickerOptions: source) { [weak self] (selections) in
             
-            self?.select(atIndexes: selections)
+            self?.select(indexes: selections)
         }
         
         self.present(controller, animated: false, completion: nil)
@@ -46,7 +46,7 @@ class SecondViewController: UIViewController {
     
     // MARK: - Methods -
     
-    private func select(atIndexes indexes: [Int]) {
+    private func select(indexes: [Int]) {
         
         source.currentIndexesSelected = indexes
         
@@ -66,7 +66,7 @@ class SecondViewController: UIViewController {
     }
 }
 
-struct SecondPickerSource: PickerOptions {
+struct SecondPickerSource: PickerMultipleOption {
     
     // MARK: - Protocol PickerOptions
     

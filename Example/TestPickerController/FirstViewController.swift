@@ -16,7 +16,7 @@ class FirstViewController: UIViewController {
     
     // MARK: - Properties -
     
-    private var source = FirstPickerSource(currentIndexesSelected: nil)
+    private var source = FirstPickerSource(currentIndexSelected: nil)
     
     // MARK: - Life cycle -
     
@@ -30,9 +30,10 @@ class FirstViewController: UIViewController {
     
     @IBAction func actionChoose(_ sender: Any) {
         
-        let controller = PGCPickerViewController.with(pickerOptions: source) { [weak self] (selections) in
+        let controller = PGCPickerViewController.with(pickerOption: source) { [weak self] (selection) in
             
-            self?.select(atIndex: selections[0])
+            self?.source.currentIndexSelected = selection
+            self?.select(index: selection)
         }
         
         self.present(controller, animated: false, completion: nil)
@@ -40,16 +41,13 @@ class FirstViewController: UIViewController {
     
     // MARK: - Methods -
     
-    private func select(atIndex index: Int) {
-        
-        source.currentIndexesSelected = [index]
-        
+    private func select(index: Int) {
         update()
     }
     
     private func update() {
         
-        guard let currentIndex = source.currentIndexesSelected?.first else {
+        guard let currentIndex = source.currentIndexSelected else {
             return
         }
         
@@ -57,26 +55,19 @@ class FirstViewController: UIViewController {
     }
 }
 
-struct FirstPickerSource: PickerOptions {
+struct FirstPickerSource: PickerSingleOption {
     
     let items = ["Audi", "BMW", "Chevrolet", "Ford", "Honda", "Hyundai", "Jeep", "KIA", "Mazda", "Mitsubishi", "Nissan", "Peugeot", "Renault", "Subaru", "Suzuki", "Toyota", "Volkswagen", "Volvo"]
     
     // MARK: - Protocol PickerOptions
     
-    var currentIndexesSelected: [Int]?
+    var currentIndexSelected: Int?
     
-    var numberOfComponents: Int {
-        
-        return 1
-    }
-    
-    func numberOfRows(atComponent: Int) -> Int {
-        
+    func numberOfRows() -> Int {
         return self.items.count
     }
     
-    func title(forRow row: Int, atComponent component: Int) -> String {
-        
+    func title(forRow row: Int) -> String {
         return self.items[row]
     }
 }
