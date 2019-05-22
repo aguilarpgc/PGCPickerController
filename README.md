@@ -10,9 +10,35 @@
 
 Add PGCPickerViewController folder into your project.
 
-## Example Usage
+## Usage
 
-*TODO*
+Check folder Example :)
+
+### Single (one component)
+
+Conforms to `PickerSingleOption` protocol
+
+
+``` Swift
+
+let pickerSource: PickerSingleOption!
+
+// ...
+
+let controller = PGCPickerViewController.with(pickerOption: pickerSource) { [weak self] (indexSelected) in
+
+    self?.pickerSource.currentIndexSelected = indexSelected // Save selection
+    
+    // Do stuff with indexSelected
+    // self?.select(index: indexSelected)
+}
+
+self.present(controller, animated: false, completion: nil)
+```
+
+### Multiple
+
+// TODO
 
 ## Images
 
