@@ -49,3 +49,7 @@ self.present(controller, animated: false, completion: nil)
 ### Multiple choice
 
 ![Multiple](https://github.com/aguilarpgc/PGCPickerController/blob/master/Images/multiple.gif)
+
+## License
+
+This program is free software; you can redistribute it and/or modify it under the terms of the MIT License.
